@@ -4,7 +4,7 @@
 Scripts que foram utilizados durante o doutorado:
 
 1° - extrair_linhas_com_cell_membrana.pl
-Esse script e perl lê o arquivo de saída do DeepLoc2.1, que é um .csv, e extrai as linhas que possuem a palavra "Cell membrane" que identifica a proteína como sendo de membrana.
+Esse script em perl lê o arquivo de saída do DeepLoc2.1, que é um .csv, e extrai as linhas que possuem a palavra "Cell membrane" que identifica a proteína como sendo de membrana.
 
 Utilização:
 perl ./extrair_linhas_com_cell_membrana.pl Arquivo_de_Saída.csv
