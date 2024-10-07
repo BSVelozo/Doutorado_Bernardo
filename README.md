@@ -72,7 +72,3 @@ Este script compara um arquivo de identificadores com sufixos de tipo proteico (
 ```bash
 perl ./Extrair_Sequencias_DeepTmHmm.pl arquivo_identificadores.3line arquivo_multifasta.fasta arquivo_resultado.fasta
 ```
-
----
-
-Esse formato está mais
