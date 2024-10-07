@@ -1,52 +1,78 @@
-# Doutorado Bernardo Saraiva Velozo
-# Realizado no Laboratorio de Bioinformatica - UFRJ pelo PPGBq
+# Doutorado Bernardo Saraiva Velozo  
+## Laboratório de Bioinformática - UFRJ, PPGBq  
 
-Scripts durante a etapa :
+Scripts desenvolvidos durante o doutorado:  
 
-1° - extrair_linhas_com_cell_membrana.pl
+### 1. extrair_linhas_com_cell_membrana.pl  
 
-Descrição: 
-Esse script em perl lê o arquivo de saída do DeepLoc2.1, que é um .csv, e extrai as linhas que possuem a palavra "Cell membrane" que identifica a proteína como sendo de membrana.
+**Descrição:**  
+Este script, escrito em Perl, lê o arquivo de saída do DeepLoc2.1 (.csv) e extrai as linhas que contêm a expressão "Cell membrane", que identifica proteínas de membrana.  
 
-Utilização:
+**Uso:**  
+```bash
 perl ./extrair_linhas_com_cell_membrana.pl Arquivo_de_Saída.csv
+```  
 
-2° - extrair_proteinas_baseado_no_header.pl
+### 2. extrair_proteinas_baseado_no_header.pl  
 
-Descrição: 
-Esse script em perl lê o arquivo de saída do DeepLoc2.1 e compara a coluna 1 com o identificadores com um outro arquivo que se encontram as sequências fasta das proteínas. Ao encontrar um match entre o identificador no arquivo de saída e o header do arquivo .fasta ele coloca o header e a proteína num outro arquivo.
+**Descrição:**  
+Este script compara os identificadores da coluna 1 de um arquivo de saída do DeepLoc2.1 com os cabeçalhos de um arquivo FASTA que contém as sequências proteicas. Quando encontra uma correspondência, copia o cabeçalho e a sequência proteica para um novo arquivo.  
 
-Utilização:
+**Uso:**  
+```bash
 perl ./extrair_proteinas_baseado_no_header.pl Arquivo_do_DeepLoc2.1.csv Arquivo_com_as_Proteínas.fasta
+```  
 
-3° - excluir_sequencias.pl
+### 3. excluir_sequencias.pl  
 
-Descrição:
-Esse script em perl lê o arquivo com somente os headers de identificação do fasta e compara com um arquivo multifasta. Se o header for encontrado nesse arquivo multifasta a sequencia e header vai ser excluido do arquivo. O nome dos arquivo a serem utilizados devem ser atualizados ao abrir o script.
+**Descrição:**  
+Este script lê um arquivo contendo cabeçalhos de identificação e os compara com um arquivo multifasta. Se um cabeçalho for encontrado no arquivo multifasta, tanto o cabeçalho quanto a sequência correspondente são excluídos. Os nomes dos arquivos devem ser atualizados diretamente no script antes de sua execução.  
 
-Utilização:
+**Uso:**  
+```bash
 perl ./excluir_sequencias.pl
+```  
 
-4° - Compara_Headers.pl
+### 4. Compara_Headers.pl  
 
-Descrição:
-Esse script compara dois arquivos que possuem headers de arquivos fasta. Caso o header se encontre nos dois arquivos ele vai ser copiado para um terceiro arquivo que possui todos os identificadores que estão presentes nos dois arquivos.
+**Descrição:**  
+Este script compara os cabeçalhos de dois arquivos FASTA. Se um cabeçalho estiver presente em ambos os arquivos, ele será copiado para um terceiro arquivo, contendo todos os identificadores compartilhados entre os dois arquivos.  
 
-Utilização:
+**Uso:**  
+```bash
 perl ./Compara_Headers.pl Identificadores1.txt Identificadores2.txt Identificadores_Nos_Dois_Arquivos.txt
+```  
 
-5° - Extrair_sequencias.pl
+### 5. Extrair_sequencias.pl  
 
-Descrição:
-Esse script em perl compara um arquivo com identificadores de uma seqeuncia .fasta com um outro arquivo multifasta que inclui os identificadores e suas sequencias. Em seguida o script pega as sequencias e seu identificadores que foram encontrados e colocam num arquivo outro arquivo.
+**Descrição:**  
+Este script compara um arquivo contendo identificadores de sequências FASTA com um arquivo multifasta. As sequências e seus respectivos identificadores encontrados são extraídos e gravados em um novo arquivo.  
 
-Utilização:
+**Uso:**  
+```bash
 perl ./Extrair_sequencias.pl headers.txt multifasta.fasta saida.fasta
+```  
 
-6° - split_fasta.pl
+### 6. split_fasta.pl  
 
-Descrição:
-Esse script separa um arquivo multifasta em arquivos fasta individuais.
+**Descrição:**  
+Este script divide um arquivo multifasta em vários arquivos FASTA individuais.  
 
-Utilização:
+**Uso:**  
+```bash
 perl ./split_fasta.pl
+```  
+
+### 7. Extrair_Sequencias_DeepTmHmm.pl  
+
+**Descrição:**  
+Este script compara um arquivo de identificadores com sufixos de tipo proteico (gerados pelo DeepTmHMM) com um arquivo multifasta e cria um terceiro arquivo contendo apenas as proteínas e seus identificadores correspondentes, preservando o tipo de proteína no identificador.  
+
+**Uso:**  
+```bash
+perl ./Extrair_Sequencias_DeepTmHmm.pl arquivo_identificadores.3line arquivo_multifasta.fasta arquivo_resultado.fasta
+```
+
+---
+
+Esse formato está mais
